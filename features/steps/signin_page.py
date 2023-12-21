@@ -1,4 +1,4 @@
-from behave import given, when
+from behave import given, when, then
 from time import sleep
 
 
@@ -9,12 +9,13 @@ def open_login(context):
 
 
 @when('Log in to the page')
-def input_credentials(context):
+def login_to_the_page(context):
     context.app.signin_page.input_credentials()
+    context.app.signin_page.click_continue()
     sleep(5)
 
 
-@when('Click on Continue')
-def click_continue(context):
-    context.app.signin_page.click_continue()
+# @then('Click on Continue')
+# def click_continue(context):
+#     context.app.signin_page.click_continue()
 

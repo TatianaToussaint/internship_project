@@ -1,3 +1,5 @@
+from time import sleep
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -19,6 +21,7 @@ class SubscriptionPaymentsPage(Page):
         self.click(*self.SETTING_BUTTON)
 
     def click_sub_payment_button(self):
+        sleep(1)
         self.wait_for_element_clickable(self.SUB_PAYMENT_BUTTON)
 
     def verify_title(self):
